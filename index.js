@@ -1,1 +1,0 @@
-./packages/scu-pecourse-utils-console/index.js
