@@ -1,1 +1,1 @@
-./packages/scu-pecourse-utils-console/index.js
+packages/scu-pecourse-utils-console/index.js
