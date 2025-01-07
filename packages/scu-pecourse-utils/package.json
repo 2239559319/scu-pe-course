@@ -10,6 +10,7 @@
     }
   },
   "scripts": {
+    "dev": "tsc -w --outDir cjs -m commonjs",
     "build": "pnpm build:esm && pnpm build:cjs",
     "build:esm": "tsc --outDir esm",
     "build:cjs": "tsc --outDir cjs -m commonjs"

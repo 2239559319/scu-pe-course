@@ -1,4 +1,4 @@
-import { jwt_secret, app_key, app_secret, createScuPeJWT } from '../src';
+import { jwt_secret, app_key, app_secret, createScuPeJWT, getSign } from '../src';
 
 describe('test constants', () => {
 
@@ -39,5 +39,14 @@ describe('test jwt', () => {
     const rightToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiMSIsIm5hbWUiOiIxMTExMTExMTExMTExIiwidXNlcmlkIjoiMTExMTExMTExMTExMSIsImlzcyI6InJlc3RhcGl1c2VyIiwiYXVkIjoiMDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjYiLCJleHAiOjE3MzY0MDE0MzYsIm5iZiI6MTczNjIyODYzNn0.KFiRFmnuVXGZFS8Xia5cpe1xolVQUldpTWxlORLY2HU';
 
     expect(jwtToken).toBe(rightToken);
+  });
+});
+
+describe('test getSign', () => {
+  it('test getSign1', () => {
+    const timestamp = '1736250293000';
+    const path = '/api/terms';
+    const sign = getSign({ path, appsecret: app_secret, timestamp });
+    expect(sign).toBe('72203fbb66c8cf6a7de0f44b6f7912a3');
   });
 });

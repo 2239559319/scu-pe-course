@@ -6,3 +6,4 @@ lib
 esm
 cjs
 test.js
+*.tsbuildinfo

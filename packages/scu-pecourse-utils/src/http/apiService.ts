@@ -35,7 +35,10 @@ export class ApiService {
     const qs = new URLSearchParams(query).toString();
 
     const req = await fetch(`${url}?${qs}`, {
-      headers: this.headers,
+      method: 'GET',
+      headers: {
+        ...this.headers,
+      },
     });
     return req.json();
   }
@@ -63,15 +66,13 @@ export class ApiService {
       ...params,
     };
 
-    const qs = new URLSearchParams(query).toString();
-
-    const req = await fetch(`${url}?${qs}`, {
+    const req = await fetch(`${url}`, {
       headers: {
         ...this.headers,
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       method: 'POST',
-      body: new URLSearchParams(data).toString(),
+      body: new URLSearchParams(query).toString(),
     });
     return req.json();
   }
