@@ -1,11 +1,13 @@
 {
-  "name": "@scu-pecourse/pe-course",
-  "version": "1.0.2",
+  "name": "@xiaochuan-dev/scu-pe-course",
+  "version": "0.0.1",
   "license": "GPL-3.0",
   "private": true,
   "packageManager": "pnpm@9.12.2",
   "devDependencies": {
     "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.5",
+    "esbuild": "^0.24.2",
     "jest": "^29.7.0",
     "prettier": "^2.3.2",
     "ts-jest": "^29.2.5",
@@ -13,6 +15,7 @@
   },
   "scripts": {
     "test": "jest",
-    "format": "prettier --write packages/"
+    "format": "prettier --write packages/",
+    "copyreadme": "esbuild scripts/**/*.ts --outdir=dist --bundle --format=cjs --platform=node && node dist/insertConsoleToReadme.js"
   }
 }

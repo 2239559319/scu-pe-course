@@ -1,0 +1,32 @@
+name: auto-update-readme
+
+permissions: write-all
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  update:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: node --version
+      - run: corepack enable
+      - run: pnpm i
+      - run: pnpm copyreadme
+      - name: commit
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m 'update js code'
+          git push
+

@@ -39,8 +39,8 @@ export function createScuPeJWT({
   nbf: number;
 }) {
   const header = {
-    typ: "JWT",
-    alg: "HS256",
+    typ: 'JWT',
+    alg: 'HS256',
   };
   const secret = jwt_secret;
   const payload = {

@@ -1,7 +1,12 @@
-import { jwt_secret, app_key, app_secret, createScuPeJWT, getSign } from '../src';
+import {
+  jwt_secret,
+  app_key,
+  app_secret,
+  createScuPeJWT,
+  getSign,
+} from '../src';
 
 describe('test constants', () => {
-
   it('test jwt_secret', () => {
     expect(jwt_secret).toBe('098f6bcd4621d373cade4e832627b4f6');
   });
@@ -13,7 +18,6 @@ describe('test constants', () => {
   it('test app_secret', () => {
     expect(app_secret).toBe('7cd476ab866b49d7a9788ad9f4789495');
   });
-
 });
 
 describe('test jwt', () => {
@@ -24,7 +28,8 @@ describe('test jwt', () => {
 
     const jwtToken = createScuPeJWT({ id, exp, nbf });
 
-    const rightToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiMSIsIm5hbWUiOiIwMDAwMDAwMDAwMDAwIiwidXNlcmlkIjoiMDAwMDAwMDAwMDAwMCIsImlzcyI6InJlc3RhcGl1c2VyIiwiYXVkIjoiMDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjYiLCJleHAiOjE3MzY0MDE0MzYsIm5iZiI6MTczNjIyODYzNn0.mPK2ciBvEaKn2yA0MkT7hKNYkwCzfTO2wD0hSqh7U_4';
+    const rightToken =
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiMSIsIm5hbWUiOiIwMDAwMDAwMDAwMDAwIiwidXNlcmlkIjoiMDAwMDAwMDAwMDAwMCIsImlzcyI6InJlc3RhcGl1c2VyIiwiYXVkIjoiMDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjYiLCJleHAiOjE3MzY0MDE0MzYsIm5iZiI6MTczNjIyODYzNn0.mPK2ciBvEaKn2yA0MkT7hKNYkwCzfTO2wD0hSqh7U_4';
 
     expect(jwtToken).toBe(rightToken);
   });
@@ -36,7 +41,8 @@ describe('test jwt', () => {
 
     const jwtToken = createScuPeJWT({ id, exp, nbf });
 
-    const rightToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiMSIsIm5hbWUiOiIxMTExMTExMTExMTExIiwidXNlcmlkIjoiMTExMTExMTExMTExMSIsImlzcyI6InJlc3RhcGl1c2VyIiwiYXVkIjoiMDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjYiLCJleHAiOjE3MzY0MDE0MzYsIm5iZiI6MTczNjIyODYzNn0.KFiRFmnuVXGZFS8Xia5cpe1xolVQUldpTWxlORLY2HU';
+    const rightToken =
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiMSIsIm5hbWUiOiIxMTExMTExMTExMTExIiwidXNlcmlkIjoiMTExMTExMTExMTExMSIsImlzcyI6InJlc3RhcGl1c2VyIiwiYXVkIjoiMDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjYiLCJleHAiOjE3MzY0MDE0MzYsIm5iZiI6MTczNjIyODYzNn0.KFiRFmnuVXGZFS8Xia5cpe1xolVQUldpTWxlORLY2HU';
 
     expect(jwtToken).toBe(rightToken);
   });
