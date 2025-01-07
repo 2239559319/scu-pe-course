@@ -1,0 +1,29 @@
+{
+  "name": "@xiaochuan-dev/scu-pecourse-html",
+  "preview": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "webpack serve",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "less": "^4.2.1",
+    "less-loader": "^12.2.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
