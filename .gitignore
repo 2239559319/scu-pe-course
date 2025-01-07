@@ -3,3 +3,6 @@ test
 .vscode
 build
 lib
+esm
+cjs
+test.js
