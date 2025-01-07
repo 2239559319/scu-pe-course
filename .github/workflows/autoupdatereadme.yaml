@@ -26,14 +26,12 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git fetch origin
-          CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          if git diff --quiet origin/${CURRENT_BRANCH}; then
-            echo "No changes detected."
-            echo "::set-output name=changed::false"
-          else
+          if [[ -n $(git status --porcelain) ]]; then
             echo "Changes detected."
             echo "::set-output name=changed::true"
+          else
+            echo "No changes detected."
+            echo "::set-output name=changed::false"
           fi
 
       - name: Commit changes
