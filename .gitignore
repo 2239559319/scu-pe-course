@@ -7,3 +7,4 @@ esm
 cjs
 test.js
 *.tsbuildinfo
+dist

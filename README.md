@@ -17,6 +17,7 @@ scu-pecourse-utils-dom | 通过实例获取方法
 
 在选课前十分钟登录选课系统，进入选课界面。复制下面的代码
 
+<!-- PLACEHOLDER-S -->
 ```javascript
 /**
  * 在console中使用的代码
@@ -69,7 +70,8 @@ function choose(courseClassId, teacherUid, teacherName, studentUid) {
     });
   });
 }
-;((teacherName) => {
+
+!((teacherName) => {
   const { courseClassId, teacherUid } =
     getClassIdAndTeacherIdByDOM(teacherName);
   const { username } = getUser();
@@ -94,8 +96,9 @@ function choose(courseClassId, teacherUid, teacherName, studentUid) {
     }
   }, 1000);
 })('夏廷富');
-
 ```
+<!-- PLACEHOLDER-E -->
+
 把复制下来的代码最后一行的老师名字改成自己想选的课的老师名字。
 
 在选课页面打开浏览器的调试模式（一般是按F12）。在右边的调试界面里面选择console(控制台)，把刚才改好的代码复制到console里面，在选课前1-3分钟之内按回车运行代码，代码成功运行后会有输出。等能选课之后会自动选课成功并输出。此时可以刷新页面去确定选课结果

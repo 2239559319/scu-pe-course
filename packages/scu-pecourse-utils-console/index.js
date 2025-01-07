@@ -49,7 +49,8 @@ function choose(courseClassId, teacherUid, teacherName, studentUid) {
     });
   });
 }
-;((teacherName) => {
+
+!((teacherName) => {
   const { courseClassId, teacherUid } =
     getClassIdAndTeacherIdByDOM(teacherName);
   const { username } = getUser();

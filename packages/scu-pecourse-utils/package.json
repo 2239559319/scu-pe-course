@@ -1,6 +1,6 @@
 {
-  "name": "@scu-pecourse/utils",
-  "version": "1.0.6",
+  "name": "@xiaochuan-dev/scu-pecourse-utils",
+  "version": "0.0.1",
   "license": "GPL-3.0",
   "exports": {
     ".": {
