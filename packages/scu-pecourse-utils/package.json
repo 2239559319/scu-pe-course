@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "license": "GPL-3.0",
   "types": "./esm/index.d.ts",
+  "files": [
+    "esm",
+    "cjs"
+  ],
   "exports": {
     ".": {
       "import": "./esm/index.js",
