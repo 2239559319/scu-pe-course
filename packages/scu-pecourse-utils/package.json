@@ -2,6 +2,7 @@
   "name": "@xiaochuan-dev/scu-pecourse-utils",
   "version": "0.0.1",
   "license": "GPL-3.0",
+  "types": "./esm/index.d.ts",
   "exports": {
     ".": {
       "import": "./esm/index.js",
