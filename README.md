@@ -11,6 +11,8 @@ scu-pecourse-utils-dom | 通过实例获取方法
 
 # 使用方法1
 
+推荐使用这种方法，没有条件再使用方法2
+
 > 使用的代码位于[packages/scu-pecourse-utils-console/index.js](https://github.com/2239559319/scu-pe-course/blob/master/packages/scu-pecourse-utils-console/index.js)
 
 本代码需要在pc端浏览器使用
