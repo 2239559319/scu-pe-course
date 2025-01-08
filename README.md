@@ -9,7 +9,7 @@ scu-pecourse-utils | 由底层的加密实现，其他语言实现可以参考�
 scu-pecourse-utils-console | 挂在console上使用
 scu-pecourse-utils-dom | 通过实例获取方法
 
-# 使用方法
+# 使用方法1
 
 > 使用的代码位于[packages/scu-pecourse-utils-console/index.js](https://github.com/2239559319/scu-pe-course/blob/master/packages/scu-pecourse-utils-console/index.js)
 
@@ -103,6 +103,12 @@ function choose(courseClassId, teacherUid, teacherName, studentUid) {
 
 在选课页面打开浏览器的调试模式（一般是按F12）。在右边的调试界面里面选择console(控制台)，把刚才改好的代码复制到console里面，在选课前1-3分钟之内按回车运行代码，代码成功运行后会有输出。等能选课之后会自动选课成功并输出。此时可以刷新页面去确定选课结果
 
-# 其他
+## 其他
 
 此程序默认1s发送一次请求，也就是抢一次，所有在开始选课前1分钟运行十分可靠。
+
+# 使用方法2
+
+如果不方便使用电脑的话可以直接下载`html`文件，用手机的浏览器直接打开下载的这个html文件，根据提示完成操作。
+
+<a href="https://unpkg.luckincdn.com/@xiaochuan-dev/scu-pecourse-html@latest/dist/index.html" download="index.html">下载html文件</a>
