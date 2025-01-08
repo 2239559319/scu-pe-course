@@ -1,6 +1,7 @@
 const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -15,7 +16,7 @@ const config = {
     filename: '[name].js',
     publicPath: isDev
       ? '/'
-      : '//unpkg.luckincdn.com/@xiaochuan-dev/scu-pecourse-html@latest/dist/',
+      : 'https://unpkg.luckincdn.com/@xiaochuan-dev/scu-pecourse-html@latest/dist/',
     assetModuleFilename: 'fonts/[hash][ext][query]',
     clean: true,
   },
@@ -59,6 +60,14 @@ const config = {
       template: join(__dirname, 'public', 'index.html'),
     }),
     new MiniCssExtractPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: join(__dirname, './public/download.html'),
+          to: join(__dirname, 'dist/download.html'),
+        },
+      ],
+    }),
   ],
   externals: {
     react: 'React',
@@ -67,7 +76,6 @@ const config = {
   },
   devServer: {
     port: 9000,
-    // hot: true,
   },
 };
 
