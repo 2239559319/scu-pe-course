@@ -13,9 +13,8 @@
       const a = document.querySelector('a');
       a.addEventListener('click', async (e) => {
         e.preventDefault();
-        const req = await fetch(
-          'https://unpkg.luckincdn.com/@xiaochuan-dev/scu-pecourse-html@latest/dist/index.html'
-        );
+        const htmlurl = location.href.replace(/dist\/.*$/, 'dist/index.html');
+        const req = await fetch(htmlurl);
         const text = await req.text();
 
         const blob = new Blob([text], { type: 'text/html' });
