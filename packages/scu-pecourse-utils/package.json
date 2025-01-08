@@ -2,13 +2,8 @@
   "name": "@xiaochuan-dev/scu-pecourse-utils",
   "version": "0.0.1",
   "license": "GPL-3.0",
-  "exports": {
-    ".": {
-      "import": "./esm/index.js",
-      "require": "./cjs/index.js",
-      "types": "./esm/index.js"
-    }
-  },
+  "types": "./esm/index.d.ts",
+
   "scripts": {
     "dev": "tsc -w --outDir cjs -m commonjs",
     "build": "pnpm build:esm && pnpm build:cjs",

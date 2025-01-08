@@ -1,5 +1,8 @@
 const { join } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const isDev = process.env.NODE_ENV === 'development';
 
 /**
  * @type {import('webpack').Configuration}
@@ -10,6 +13,11 @@ const config = {
   output: {
     path: join(__dirname, 'dist'),
     filename: '[name].js',
+    publicPath: isDev
+      ? '/'
+      : '//unpkg.luckincdn.com/@xiaochuan-dev/scu-pecourse-html@latest/dist/',
+    assetModuleFilename: 'fonts/[hash][ext][query]',
+    clean: true,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
@@ -22,16 +30,24 @@ const config = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.less$/i,
-        use: ['style-loader', 'css-loader', 'less-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        type: 'asset/resource',
       },
     ],
   },
   optimization: {
-    minimize: false,
+    minimize: isDev ? false : true,
   },
   performance: {
     maxAssetSize: 50000000,
@@ -42,14 +58,16 @@ const config = {
     new HtmlWebpackPlugin({
       template: join(__dirname, 'public', 'index.html'),
     }),
+    new MiniCssExtractPlugin(),
   ],
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
+    'crypto-js': 'CryptoJS',
   },
   devServer: {
     port: 9000,
-    hot: true,
+    // hot: true,
   },
 };
 

@@ -45,11 +45,9 @@ export class ApiService {
 
   async post({
     path,
-    params,
     data,
   }: {
     path: string;
-    params?: any;
     data: any;
   }) {
     const url = `${this.url}${path}`;
@@ -63,7 +61,7 @@ export class ApiService {
         timestamp,
         data,
       }),
-      ...params,
+      ...data,
     };
 
     const req = await fetch(`${url}`, {

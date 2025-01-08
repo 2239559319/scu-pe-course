@@ -16,7 +16,7 @@ export async function start({
 }) {
   const apiService = new ApiService();
   const api = new Api(apiService);
-  const token = await api.login({ username: studentUid, password, apiService });
+  const { token } = await api.login({ username: studentUid, password, apiService });
   apiService.initAuth(token);
 
   const termId = await api.getTermId();
@@ -34,12 +34,19 @@ export async function start({
       teacherUid,
     });
     if (res) {
-      callback?.(true);
+      callback?.({
+        status: true,
+        msg: '选课成功',
+      });
       console.log('选课成功');
       clearInterval(timer);
     } else {
-      callback?.(false);
-      console.log(`已经选课${count++}次`);
+      const msg = `已经选课${count++}次`;
+      callback?.({
+        status: false,
+        msg,
+      });
+      console.log(msg);
     }
   }, timeout || 1000);
 

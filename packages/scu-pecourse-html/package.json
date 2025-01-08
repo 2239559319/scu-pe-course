@@ -1,21 +1,29 @@
 {
   "name": "@xiaochuan-dev/scu-pecourse-html",
-  "preview": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "webpack serve",
+    "dev": "NODE_ENV=development webpack serve",
     "build": "webpack"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "email": "w2239559319@outlook.com",
+    "name": "xiaochuan",
+    "url": "https://github.com/2239559319"
+  },
   "devDependencies": {
-    "@types/react": "^17",
-    "@types/react-dom": "^17",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
+    "@types/react-router-dom": "^5.3.3",
+    "@xiaochuan-dev/scu-pecourse-utils": "workspace:^",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
     "less": "^4.2.1",
     "less-loader": "^12.2.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "react-dom^18": "link:@types/react-dom^18",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
     "webpack": "^5.97.1",
@@ -23,7 +31,14 @@
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.1.1",
+    "@mui/icons-material": "^6.3.1",
+    "@mui/material": "^6.3.1",
+    "@toolpad/core": "^0.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "5.3.0"
   }
 }
