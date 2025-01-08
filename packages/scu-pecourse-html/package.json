@@ -1,6 +1,6 @@
 {
   "name": "@xiaochuan-dev/scu-pecourse-html",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "dev": "NODE_ENV=development webpack serve",
     "build": "webpack"
