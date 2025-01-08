@@ -23,7 +23,6 @@
     "less": "^4.2.1",
     "less-loader": "^12.2.0",
     "mini-css-extract-plugin": "^2.9.2",
-    "react-dom^18": "link:@types/react-dom^18",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
     "webpack": "^5.97.1",
