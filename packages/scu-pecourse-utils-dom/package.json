@@ -1,6 +1,7 @@
 {
   "name": "scu-pecourse-utils-dom",
   "version": "1.0.6",
+  "private": true,
   "main": "./lib/index.esm.js",
   "license": "GPL-3.0",
   "author": {
