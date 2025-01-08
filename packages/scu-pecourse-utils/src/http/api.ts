@@ -11,7 +11,7 @@ export class Api {
     username: string;
     password: string;
     apiService: ApiService;
-  }): Promise<string> {
+  }): Promise<{ username: string; token: string }> {
     const path = '/api/login';
     const data = {
       username,
@@ -19,7 +19,15 @@ export class Api {
     };
 
     const res = await this.apiService.post({ path, data });
-    return res.token.access_token;
+
+    if (res.data?.username) {
+      return {
+        username,
+        token: res.data.token.access_token,
+      };
+    }
+
+    return null;
   }
 
   /**

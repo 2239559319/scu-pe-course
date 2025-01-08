@@ -6,7 +6,7 @@
     ".": {
       "import": "./esm/index.js",
       "require": "./cjs/index.js",
-      "types": "./esm/index.js"
+      "types": "./esm/index.d.ts"
     }
   },
   "scripts": {
@@ -30,5 +30,9 @@
   ],
   "devDependencies": {
     "@types/crypto-js": "^4.2.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
