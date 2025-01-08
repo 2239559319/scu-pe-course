@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import type { Course, ParamType } from '@xiaochuan-dev/scu-pecourse-utils';
-import { api, isLogined } from '../utils';
+import { api, isLogined, logout } from '../utils';
 import {
   Button,
   FormControl,
@@ -9,8 +9,11 @@ import {
   Select,
   Snackbar,
 } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 
 const Choose = () => {
+  const history = useHistory();
+
   const [{ courses, teacherName, teacherUid, courceId }, setState] = useState<{
     termId: ParamType | null;
     courses: Course[] | null;
@@ -26,9 +29,7 @@ const Choose = () => {
   });
 
   useEffect(() => {
-    if (isLogined()) {
-      //
-    }
+    isLogined();
 
     api
       .getTermId()
@@ -83,6 +84,19 @@ const Choose = () => {
 
   return (
     <div className="Choose">
+      <div className="logout">
+        <Button
+          variant="text"
+          size="small"
+          color="error"
+          onClick={() => {
+            logout();
+            history.push('/');
+          }}
+        >
+          退出登录
+        </Button>
+      </div>
       <FormControl fullWidth={true}>
         <InputLabel id="select-label-cource">课程</InputLabel>
         <Select

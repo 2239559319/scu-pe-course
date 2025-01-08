@@ -26,3 +26,9 @@ export async function login(username, password, callback) {
     callback(false);
   }
 }
+
+export function logout() {
+  apiService.initAuth('');
+  localStorage.removeItem('token');
+  localStorage.removeItem('username');
+}
