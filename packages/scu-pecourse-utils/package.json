@@ -2,8 +2,13 @@
   "name": "@xiaochuan-dev/scu-pecourse-utils",
   "version": "0.0.1",
   "license": "GPL-3.0",
-  "types": "./esm/index.d.ts",
-
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "require": "./cjs/index.js",
+      "types": "./esm/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "tsc -w --outDir cjs -m commonjs",
     "build": "pnpm build:esm && pnpm build:cjs",
@@ -25,5 +30,9 @@
   ],
   "devDependencies": {
     "@types/crypto-js": "^4.2.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
