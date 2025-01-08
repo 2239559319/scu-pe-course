@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>下载页面</title>
+  </head>
+  <body>
+    <div>
+      <a href="#" download target="_blank">下载抢课html文件</a>
+    </div>
+    <script>
+      const a = document.querySelector('a');
+      a.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const req = await fetch(
+          'https://unpkg.luckincdn.com/@xiaochuan-dev/scu-pecourse-html@latest/dist/index.html'
+        );
+        const text = await req.text();
+
+        const blob = new Blob([text], { type: 'text/html' });
+
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'index.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    </script>
+  </body>
+</html>
