@@ -16,7 +16,11 @@ export async function start({
 }) {
   const apiService = new ApiService();
   const api = new Api(apiService);
-  const { token } = await api.login({ username: studentUid, password, apiService });
+  const { token } = await api.login({
+    username: studentUid,
+    password,
+    apiService,
+  });
   apiService.initAuth(token);
 
   const termId = await api.getTermId();
