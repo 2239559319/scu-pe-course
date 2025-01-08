@@ -53,7 +53,7 @@ const config = {
     maxAssetSize: 50000000,
     maxEntrypointSize: 5000000,
   },
-  devtool: 'source-map',
+  devtool: isDev ? 'source-map' : false,
   plugins: [
     new HtmlWebpackPlugin({
       template: join(__dirname, 'public', 'index.html'),
