@@ -1,4 +1,4 @@
-import { Api, ApiService } from '@xiaochuan-dev/scu-pecourse-utils/src';
+import { Api, ApiService } from '@xiaochuan-dev/scu-pecourse-utils';
 
 export const apiService = new ApiService();
 export const api = new Api(apiService);

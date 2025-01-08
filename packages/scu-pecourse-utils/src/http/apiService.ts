@@ -43,13 +43,7 @@ export class ApiService {
     return req.json();
   }
 
-  async post({
-    path,
-    data,
-  }: {
-    path: string;
-    data: any;
-  }) {
+  async post({ path, data }: { path: string; data: any }) {
     const url = `${this.url}${path}`;
     const timestamp = getTimestamp();
     const query = {
