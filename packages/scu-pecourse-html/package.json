@@ -1,5 +1,5 @@
 {
-  "name": "@xiaochuan-dev/scu-pecourse-html",
+  "name": "@scu-xiaochuan/scu-pecourse-html",
   "version": "0.0.5",
   "scripts": {
     "dev": "NODE_ENV=development webpack serve",
@@ -17,7 +17,7 @@
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.0",
     "@types/react-router-dom": "^5.3.3",
-    "@xiaochuan-dev/scu-pecourse-utils": "workspace:^",
+    "@scu-xiaochuan/scu-pecourse-utils": "workspace:^",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",

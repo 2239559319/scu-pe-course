@@ -115,7 +115,7 @@ function choose(courseClassId, teacherUid, teacherName, studentUid) {
 
 如果不方便使用电脑的话可以进下面的网页点击下载`html`文件，用手机的浏览器直接打开下载的这个html文件，根据提示完成操作。
 
-[去下载html文件](https://unpkg.luckincdn.com/@xiaochuan-dev/scu-pecourse-html@latest/dist/download.html)
+[去下载html文件](https://unpkg.luckincdn.com/@scu-xiaochuan/scu-pecourse-html@latest/dist/download.html)
 
 # contributer
 

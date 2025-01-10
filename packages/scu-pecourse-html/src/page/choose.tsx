@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import type { Course, ParamType } from '@xiaochuan-dev/scu-pecourse-utils';
+import type { Course, ParamType } from '@scu-xiaochuan/scu-pecourse-utils';
 import { api, isLogined, logout } from '../utils';
 import {
   Button,

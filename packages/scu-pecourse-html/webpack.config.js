@@ -16,7 +16,7 @@ const config = {
     filename: '[name].js',
     publicPath: isDev
       ? '/'
-      : 'https://unpkg.luckincdn.com/@xiaochuan-dev/scu-pecourse-html@latest/dist/',
+      : 'https://unpkg.luckincdn.com/@scu-xiaochuan/scu-pecourse-html@latest/dist/',
     assetModuleFilename: 'fonts/[hash][ext][query]',
     clean: true,
   },
