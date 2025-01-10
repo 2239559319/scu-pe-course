@@ -1,6 +1,6 @@
 {
   "name": "@scu-xiaochuan/scu-pecourse-utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "GPL-3.0",
   "types": "./esm/index.d.ts",
   "files": [
@@ -9,6 +9,7 @@
   ],
   "exports": {
     ".": {
+      "default": "./cjs/index.js",
       "import": "./esm/index.js",
       "require": "./cjs/index.js",
       "types": "./esm/index.d.ts"
